@@ -10,7 +10,16 @@ const routes = [
     name: 'Home',
     component: Home
   },
-  //  component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+  {
+    path: '/restaurante',
+    name: 'Restaurante',
+    component: () => import(/* webpackChunkName: "restaurante" */ '../views/Restaurante.vue')
+  },
+  {
+    path: '/repartidor',
+    name: 'Repartidor',
+    component: () => import(/* webpackChunkName: "repartidor" */ '../views/Repartidor.vue')
+  },
 ]
 
 const router = new VueRouter({

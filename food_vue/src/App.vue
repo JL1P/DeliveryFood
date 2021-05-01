@@ -1,37 +1,36 @@
 <template>
   <div id="app">
-      <nav class="navbar is-warning" role="navigation" aria-label="main navigation">
-        <div class="navbar-brand">
-          <a id="logo" class="mx-1" href="#" style="width: 50px; padding: 0px">
-            <img src="./assets/logo/lff.png" alt="logo">
-          </a>
-
-          <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample" @click="showMenu">
-            <span aria-hidden="true" class="toggle_menu"></span>
-            <span aria-hidden="true" class="toggle_menu"></span>
-            <span aria-hidden="true" class="toggle_menu"></span>
-          </a>
-        </div>
-
-        <div id="navbarBasicExample" class="navbar-menu fade" :class="{'is-active': mostrar}">
-          <div class="navbar-start">
-            <a class="navbar-item ml-5">
+      <b-navbar 
+        shadow
+        type=is-warning
+        >
+        <template #brand>
+            <b-navbar-item class='ml-5 py-0' tag="router-link" :to="{ path: '/' }">
+                <img
+                    src="./assets/lff.png"
+                    alt="Logo"
+                >
+            </b-navbar-item>
+        </template>
+        <template #start>
+            <b-navbar-item href="#" class='ml-5 py-0'>
               <strong class="items-nav">Restaurante</strong>
-            </a>
-            <a class="navbar-item ml-5">
+            </b-navbar-item>
+            <b-navbar-item href="#" class='ml-5 py-0'>
               <strong class="items-nav">Repartidor</strong>
-            </a>
-          </div>
+            </b-navbar-item>
+        </template>
 
-          <div class="navbar-end">
-            <div class="navbar-item">
-              <b-button id="pedirOrden" type="is-success">
-                <strong style="color: white; font-style: italic">Realizar una orden</strong>
-              </b-button>
-            </div>
-          </div>
-        </div>
-      </nav>
+        <template #end>
+            <b-navbar-item tag="div" class="py-0">
+                <div class="buttons">
+                    <a class="button" style="background: rgb(0, 204, 163); border: none">
+                        <strong style="color: white; font-style: italic">Realizar una orden</strong>
+                    </a>
+                </div>
+            </b-navbar-item>
+        </template>
+    </b-navbar>
     <router-view/>
   </div>
 </template>
