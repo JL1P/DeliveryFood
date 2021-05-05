@@ -5,18 +5,23 @@
         type=is-warning
         >
         <template #brand>
-            <b-navbar-item class='ml-5 py-0' tag="router-link" :to="{ path: '/' }">
+            <a 
+              class="ml-5 px-0"
+              style="padding-top: 1px"
+              tag="router-link"
+              href="/">
                 <img
                     src="./assets/lff.png"
+                    style="width: 45px"
                     alt="Logo"
                 >
-            </b-navbar-item>
+            </a>
         </template>
         <template #start>
-            <b-navbar-item href="#" class='ml-5 py-0'>
+            <b-navbar-item class='ml-5 py-0 align' tag="router-link" :to="{ path: '/restaurante' }">
               <strong class="items-nav">Restaurante</strong>
             </b-navbar-item>
-            <b-navbar-item href="#" class='ml-5 py-0'>
+            <b-navbar-item class='ml-5 py-0 align' tag="router-link" :to="{ path: '/repartidor' }">
               <strong class="items-nav">Repartidor</strong>
             </b-navbar-item>
         </template>
@@ -24,7 +29,7 @@
         <template #end>
             <b-navbar-item tag="div" class="py-0">
                 <div class="buttons">
-                    <a class="button" style="background: rgb(0, 204, 163); border: none">
+                    <a id="pedirOrden" class="button" style="background: rgb(0, 204, 163); border: none">
                         <strong style="color: white; font-style: italic">Realizar una orden</strong>
                     </a>
                 </div>
@@ -36,22 +41,16 @@
 </template>
 
 <script>
-export default {
 
-data() {
-  return {
-   mostrar: false, 
-  }
-},
-methods: {
-  showMenu() {
-    this.mostrar = !this.mostrar
-  }
-},
-}
 </script>
 
 <style lang="scss">
+
+.navbar-burger span {
+  color: rgb(0, 204, 163);
+  border-style: solid;
+  border-width: 1px;
+}
 
 .toggle_menu {
   color: rgb(0, 204, 163);
@@ -62,6 +61,11 @@ methods: {
     color: rgb(0, 204, 163);
     font-size: 20px;
   }
+  
+  .align {
+    text-align: center;
+  }
+  
   #pedirOrden {
     width: 100%;
   }
@@ -101,7 +105,8 @@ methods: {
   }
   100% {
     opacity: 1;
-    height: 150px;
+    height: 116px;
   }
 }
+
 </style>
