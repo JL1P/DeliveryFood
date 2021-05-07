@@ -1,112 +1,107 @@
 <template>
-  <div id="app">
-      <b-navbar 
-        shadow
-        type=is-warning
-        >
-        <template #brand>
-            <a 
-              class="ml-5 px-0"
-              style="padding-top: 1px"
-              tag="router-link"
-              href="/">
-                <img
-                    src="./assets/lff.png"
-                    style="width: 45px"
-                    alt="Logo"
-                >
-            </a>
-        </template>
-        <template #start>
-            <b-navbar-item class='ml-5 py-0 align' tag="router-link" :to="{ path: '/restaurante' }">
-              <strong class="items-nav">Restaurante</strong>
-            </b-navbar-item>
-            <b-navbar-item class='ml-5 py-0 align' tag="router-link" :to="{ path: '/repartidor' }">
-              <strong class="items-nav">Repartidor</strong>
-            </b-navbar-item>
-        </template>
+  <v-app>
+    <v-app-bar
+      absolute
+      elevate-on-scroll
+    >
+      <v-app-bar-nav-icon class="ml-2 mr-2 pb-1">
+        <img src="@/assets/lff.png" style="width:50px; height: 50px" alt="">
+      </v-app-bar-nav-icon>
 
-        <template #end>
-            <b-navbar-item tag="div" class="py-0">
-                <div class="buttons">
-                    <a id="pedirOrden" class="button" style="background: rgb(0, 204, 163); border: none">
-                        <strong style="color: white; font-style: italic">Realizar una orden</strong>
-                    </a>
-                </div>
-            </b-navbar-item>
-        </template>
-    </b-navbar>
-    <router-view/>
-  </div>
+      <div id="menu">
+        <v-item>
+          <v-btn ml-2 elevation="0">
+            <strong class="navs-item" style="font-size:25px;">Restaurante</strong>
+          </v-btn>
+        </v-item>
+        <v-item>
+          <v-btn ml-2 elevation="0">
+            <strong class="navs-item" style="font-size:25px;">Repartidor</strong>
+          </v-btn>
+        </v-item>
+      </div>
+
+      <v-spacer></v-spacer>
+
+      <v-btn
+        color=#ffdf4d
+        elevation="0"
+        id="ordenar"
+      ><strong class="pedirOrden" style="color: white; font-style: italic">Realizar una orden</strong></v-btn>
+
+      <div class="burger-menu">
+        <v-menu rounded="b-xl" offset-y>
+          <template v-slot:activator="{ attrs, on }">
+              <v-btn 
+                class="white--text ma-5"
+                v-bind="attrs"
+                v-on="on"
+                  >
+                <v-app-bar-nav-icon color="#00D1B2"></v-app-bar-nav-icon>
+                <!-- Menu -->
+              </v-btn>
+          </template>
+          <v-list>
+          <v-list-item
+            v-for="item in items"
+            :key="item"
+            link
+              >
+              <v-list-item-title v-text="item"></v-list-item-title>
+            </v-list-item>
+          </v-list>
+        </v-menu>
+      </div>
+
+
+    </v-app-bar>
+    
+    <v-main>
+      <router-view/>
+    </v-main>
+  </v-app>
 </template>
 
 <script>
 
+export default {
+  name: 'App',
+  data() {
+    return {
+      btns: [
+        ['Removed', '0'],
+        ['Large', 'lg'],
+        ['Custom', 'b-xl'],
+      ],
+      colors: ['deep-purple accent-4', 'error', 'teal darken-1'],
+      items: [...Array(4)].map((_, i) => `Item ${i}`),
+    }
+  },
+};
 </script>
 
 <style lang="scss">
 
-.navbar-burger span {
-  color: rgb(0, 204, 163);
-  border-style: solid;
-  border-width: 1px;
-}
-
-.toggle_menu {
-  color: rgb(0, 204, 163);
-}
-
-@media only screen and (max-width: 1023px) {
-  .items-nav {
-    color: rgb(0, 204, 163);
-    font-size: 20px;
-  }
-  
-  .align {
-    text-align: center;
-  }
-  
-  #pedirOrden {
-    width: 100%;
-  }
-}
-@media only screen and (min-width: 1024px) {
-  .items-nav {
-    color: white;
-    font-size: 30px;
-  }
-  #logo {
-    margin-top: 4px;
-  }
-}
-
-.items-nav { 
-  font-family: 'Times New Roman', Times, serif; 
-  font-style: italic
-}
-
-#pedirOrden {
-  background-color: rgb(0, 204, 163);
-}
-
-.navbar-menu.is-active {
-    animation: navAnim .2s ease-in-out;
-}
-
-@keyframes navAnim {
-  0% {
+  .burger-menu {
     display: none;
-    opacity: 0;
-    height: 0;
   }
-  1% {
-    display: block;
-    opacity: 0;
+
+  .navs-item {
+    color: #00D1B2;
+    font-family: 'Times New Roman', Times, serif; 
+    font-style: italic
   }
-  100% {
-    opacity: 1;
-    height: 116px;
+  
+  @media only screen and (max-width: 800px) {
+    #menu {
+      display: none
+    }
+    #ordenar {
+      display: none;
+    }
+    .burger-menu {
+      display: block;
+    }
   }
-}
 
 </style>

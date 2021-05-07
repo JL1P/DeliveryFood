@@ -8,6 +8,10 @@ import axios from 'axios'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faUserSecret } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+import vuetify from './plugins/vuetify'
+import '@babel/polyfill'
+import 'roboto-fontface/css/roboto/roboto-fontface.css'
+import 'material-design-icons-iconfont/dist/material-design-icons.css'
 
 library.add(faUserSecret)
 
@@ -19,5 +23,6 @@ new Vue({
   router,
   store,
   axios,
+  vuetify,
   render: h => h(App)
 }).$mount('#app')
