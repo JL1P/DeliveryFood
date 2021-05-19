@@ -1,37 +1,14 @@
 <template>
   <div id="app">
-      <nav class="navbar is-warning" role="navigation" aria-label="main navigation">
-        <div class="navbar-brand">
-          <a id="logo" class="mx-1" href="#" style="width: 50px; padding: 0px">
-            <img src="./assets/logo/lff.png" alt="logo">
-          </a>
 
-          <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample" @click="showMenu">
-            <span aria-hidden="true" class="toggle_menu"></span>
-            <span aria-hidden="true" class="toggle_menu"></span>
-            <span aria-hidden="true" class="toggle_menu"></span>
-          </a>
-        </div>
+    <b-navbar id="myNavbar" toggleable="lg" type="dark" class="py-0">
+    
+      <b-navbar-brand href="/">
+        <img src="./assets/Home/logo.png" alt="logo" style="width: 40px">
+      </b-navbar-brand>
+    
+    </b-navbar>
 
-        <div id="navbarBasicExample" class="navbar-menu fade" :class="{'is-active': mostrar}">
-          <div class="navbar-start">
-            <a class="navbar-item ml-5">
-              <strong class="items-nav">Restaurante</strong>
-            </a>
-            <a class="navbar-item ml-5">
-              <strong class="items-nav">Repartidor</strong>
-            </a>
-          </div>
-
-          <div class="navbar-end">
-            <div class="navbar-item">
-              <b-button id="pedirOrden" type="is-success">
-                <strong style="color: white; font-style: italic">Realizar una orden</strong>
-              </b-button>
-            </div>
-          </div>
-        </div>
-      </nav>
     <router-view/>
   </div>
 </template>
@@ -54,8 +31,15 @@ methods: {
 
 <style lang="scss">
 
+@import "./assets/scss/main";
+
+#myNavbar {
+  background-color: $blue0;
+}
+
 .toggle_menu {
   color: rgb(0, 204, 163);
+  border: 1px solid
 }
 
 @media only screen and (max-width: 1023px) {
@@ -102,7 +86,7 @@ methods: {
   }
   100% {
     opacity: 1;
-    height: 150px;
+    height: 116px;
   }
 }
 </style>

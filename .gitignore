@@ -1,6 +1,5 @@
 .DS_Store
 node_modules
-assets
 /dist
 struct.txt
 to-do.txt

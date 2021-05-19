@@ -1,7 +1,7 @@
 <template>
   <div class="home">
 
-    <div id="inicio" class="container mt-5">
+    <!-- <div id="inicio" class="container mt-5">
       <div style="height: 480px">
         <div>
         </div>
@@ -11,9 +11,9 @@
         <p class="title is-5 ml-5" style="color: white">Una plataforma de servicio a domicilio que lleva la comida de tu restaurante favorito a tu puerta.</p>
       </div>
     </div>
-    
+     -->
     <!-- Caracteristicas de la empresa -->
-    
+<!--     
     <div class="card mt-5">
       <div class="card-image">
         <figure class="image is-4by3">
@@ -41,7 +41,7 @@
           <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
         </div>
       </div>
-    </div>
+    </div> -->
   </div>
 </template>
 
@@ -60,10 +60,10 @@ export default {
 </script>
 
 <style lang="scss">
-  #inicio {
-    background: url('../assets/Home/pcpal.png');
-    filter: saturate(150%) contrast(120%);
-  }
+  // #inicio {
+  //   // background: url('../assets/Home/pcpal.png');
+  //   filter: saturate(150%) contrast(120%);
+  // }
   #texto {
     background: linear-gradient(to top, rgba(0,0,0,0.7), rgba(255,255,255,0));
     height: 100px;
