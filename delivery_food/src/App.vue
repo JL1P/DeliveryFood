@@ -1,9 +1,9 @@
 <template>
   <div id="app">
     <div>
-      <b-navbar id="navbar" toggleable="sm" type="dark" class="py-0 px-0">
+      <b-navbar id="navbar" toggleable="sm" type="dark" class="px-0 py-0">
         <b-navbar-brand id="brand" :to="{name: 'Home'}">
-          <img src="@/assets/Home/logo.png" alt="logo" style="width: 40px; height: 40px">
+          <img src="@/assets/Home/logo.png" alt="logo" style="width: 47px; height: 45px; padding-bottom: 1px">
         </b-navbar-brand>
 
         <b-navbar-toggle target="nav-collapse">
@@ -42,8 +42,11 @@
             </b-button>
           </b-navbar-nav>
         </b-collapse>
-      </b-navbar> <br>
+      </b-navbar>
     </div>
+    
+    <br/>
+
     <router-view/>
   </div>
 </template>
@@ -74,6 +77,7 @@
   border: none;
 }
 
+//Burger Menu
 .menu {
   background-color: transparent;
   border: none;
@@ -116,41 +120,64 @@
   stroke-width: 6;
 }
 
-#brand {
-  margin-left: 5px;
-}
 
 @media only screen and (max-width: 575px) {
   #restaurante, #repartidor {
     color: $green0;
   }
 
+  #brand {
+    margin-left: 5px;
+  }
+
   #nav-collapse {
     background-color: white;
   }
-
 }
 
 @media only screen and (min-width: 576px) {
-  #restaurante, #repartidor {
-    color: white;
+  #brand {
+    margin-left: 5px;
   }
-
+  
   #repartidor {
     margin-left: 15px;
   }
-
 
   #pedirOrden {
     margin-right: 6px;
   }
 }
-//   .items-nav {
-//     color: rgb(0, 204, 163);
-//   }
-// }
-//   .items-nav {
-//     color: white;
-//   }
-// }
+
+@media only screen and (min-width: 730px) {
+  #brand {
+    margin-left: 10px;
+  }
+  
+  #repartidor {
+    margin-left: 20px;
+  }
+
+  #pedirOrden {
+    margin-right: 10px;
+  }
+}
+
+@media only screen and (min-width: 1000px) {
+  #brand {
+    margin-left: 40px;
+  }
+  
+  #restaurante {
+    margin-left: 25px;
+  }
+
+  #repartidor {
+    margin-left: 50px;
+  }
+
+  #pedirOrden {
+    margin-right: 40px;
+  }
+}
 </style>
