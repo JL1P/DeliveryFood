@@ -2,6 +2,10 @@ from django.contrib import admin
 from . import models
 
 # Register your models here.
+@admin.register(models.ImagenesSitio)
+class ImagenesSitioAdmin(admin.ModelAdmin):
+    list_display = ('imagen', 'ubicacion')
+
 @admin.register(models.Pedido)
 class PedidoAdmin(admin.ModelAdmin):
     list_display = ('fecha', 'hora_solicitud', 'hora_entrega', 'descripcion', 

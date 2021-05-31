@@ -1,8 +1,13 @@
 $yellow0: #ffdd80;
-$yellow1: #ffc933;
+$yellow1: #e6a800;
 
 $green0: #00D1B2;
-$green1: #00b398;
+$green1: #009982;
+
+$gray0: #F8F8F8;
+
+$warning: #e6a800;
+$success: #009982;
 
 @import 'node_modules/bootstrap/scss/bootstrap.scss';
 @import 'node_modules/bootstrap-vue/src/index.scss';

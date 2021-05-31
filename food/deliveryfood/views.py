@@ -4,6 +4,10 @@ from . import serializer
 
 from rest_framework import viewsets
 
+class ImagenesSitioViewSet(viewsets.ModelViewSet):
+    queryset = models.ImagenesSitio.objects.all()
+    serializer_class = serializer.ImagenesSitioSerializer
+
 class PedidoViewSet(viewsets.ModelViewSet):
     queryset = models.Pedido.objects.all()
     serializer_class = serializer.PedidoSerializer

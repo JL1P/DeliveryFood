@@ -140,10 +140,6 @@
   font-style: italic;
 }
 
-* {
-  font-family: Andale Mono, monospace;
-}
-
 #pedirOrden {
   background-color: $green0;
   border: none;

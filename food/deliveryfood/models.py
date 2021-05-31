@@ -9,6 +9,11 @@ ESTADO_DEL_PEDIDO = [
     ('F', 'Facturado'),
 ]
 
+
+class ImagenesSitio(models.Model):
+    imagen = models.ImageField(verbose_name='Imagenes del sitio', upload_to='ImagenesSitio')
+    ubicacion = models.CharField(verbose_name="Ubicacion de la imagen en el sitio", max_length=200)
+
 class Pedido(models.Model):
     fecha = models.DateTimeField(verbose_name='Fecha', auto_now=False, auto_now_add=True)
     hora_solicitud = models.TimeField(verbose_name='Hora de solicitud')

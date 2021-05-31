@@ -1,6 +1,11 @@
 from . import models
 from rest_framework import serializers
 
+class ImagenesSitioSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = models.ImagenesSitio
+        fields = '__all__'
+
 class PedidoSerializer(serializers.ModelSerializer):
     class Meta:
         model = models.Pedido
