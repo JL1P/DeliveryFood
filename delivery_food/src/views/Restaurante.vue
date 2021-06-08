@@ -9,6 +9,7 @@
                 </b-col>
                 <b-col id="formRegRest" md="4" offset-md="4" class="p-3">
                     <h4 class="ml-0">Hazte socio</h4>
+                    <b-form-select v-model="selected" placeholder="Seleccione una opcion" :options="options_reg_rest" size="sm" class="mt-3"></b-form-select>
                 </b-col>
             </b-row>
         </b-container>
@@ -103,6 +104,24 @@
 <script>
 export default {
     name: 'Restaurante',
+    data() {
+        return {
+            selected: 'null',
+            options_reg_rest: [
+                { value: null, text: 'Seleccione su ciudad' },
+                { value: 'a', text: 'Habana del Este' },
+                { value: 'b', text: 'Guanabo' },
+                { value: 'c', text: 'Guanabacoa' },
+                { value: 'd', text: 'Plaza' },
+                { value: 'e', text: 'Centro Habana' },
+                { value: 'f', text: 'Arroyo Naranjo' },
+                { value: 'g', text: 'Diez de octubre' },
+                { value: 'h', text: 'Regla' },
+                { value: 'i', text: 'Marianao' },
+                { value: 'j', text: 'Habana Vieja' },
+                ]
+        }
+    },
 }
 </script>
 

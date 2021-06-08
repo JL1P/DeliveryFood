@@ -101,14 +101,20 @@
         <b-list-group horizontal="md" class="pl-4">
           <b-list-group-item class="listIdioma pr-0 pt-1" style="width: 260px">
 
-            <b-dropdown id="idioma" :text="options[selected].text" v-model="selected" class="m-2" style="border-radius: 50%;">
-              <b-dropdown-item v-for="option in options" v-bind:key="option.value" @click="selected=option.value">{{option.text}}</b-dropdown-item>
+            <b-dropdown 
+              dropup
+              id="idioma" 
+              ref="dropdown" 
+              :text="options[selected].text" 
+              v-model="selected" 
+              class="m-2" 
+              style="border-radius: 50%;">
+                <b-dropdown-item v-for="option in options" v-bind:key="option.value" @click="selected=option.value">{{option.text}}</b-dropdown-item>
             </b-dropdown>
-            
-            <div>
+            <!-- <div>
               <p v-if="selected==='0'">Texto en Español</p> 
               <p v-else>Texto en Inglés</p>
-            </div>
+            </div> -->
             
           </b-list-group-item>
           
@@ -138,9 +144,6 @@ export default {
     }
   },
   methods: {
-    myFunction() {
-      alert("You have selected some text!");
-    }
   },
 }
 </script>
@@ -186,58 +189,6 @@ export default {
 
 //Idioma
 
-// #mySelect select {
-//   background-color: transparent; 
-//   border-radius: 25px;
-//   width: 40%;
-//   color: white;
-//   outline: none;
-// }
-
-// #mySelect option {
-//   background-color: transparent !important;
-//   color: black;
-// }
-
-ul, ol {
-				list-style:none;
-			}
-			
-			.nav > li {
-				float:left;
-			}
-			
-			.nav li button {
-				background-color:#000;
-				color:#fff;
-				text-decoration:none;
-				padding:10px 12px;
-				display:block;
-			}
-			
-			.nav li button:hover {
-				background-color:#434343;
-			}
-			
-			// .nav li ul {
-			// 	display:none;
-			// 	position:absolute;
-			// 	min-width:140px;
-			// }
-			
-			.nav ul:hover > li {
-				display:block;
-			}
-			
-			.nav ul li {
-				position:relative;
-			}
-			
-			// .nav li ul li ul {
-			// 	right:-140px;
-			// 	top:0px;
-			// }
-
 .listIdioma {
   background-color: #2C2F36 !important;
   border: none !important;
@@ -258,6 +209,7 @@ ul, ol {
 
 #idioma .dropdown-menu {
   background: transparent;
+  box-shadow: 0 5px 25px 0 rgba(0, 0, 0, 0.25);
 }
 
 button.dropdown-toggle {
