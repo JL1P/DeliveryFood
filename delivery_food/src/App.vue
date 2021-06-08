@@ -101,12 +101,17 @@
         <b-list-group horizontal="md" class="pl-4">
           <b-list-group-item class="listIdioma pr-0 pt-1" style="width: 260px">
 
-            <b-dropdown id="idioma" text="Español" class="m-2" style="border-radius: 50%;">
-              <b-dropdown-item>Español</b-dropdown-item>
-              <b-dropdown-item>English</b-dropdown-item>
+            <b-dropdown id="idioma" :text="options[selected].text" v-model="selected" class="m-2" style="border-radius: 50%;">
+              <b-dropdown-item v-for="option in options" v-bind:key="option.value" @click="selected=option.value">{{option.text}}</b-dropdown-item>
             </b-dropdown>
             
+            <div>
+              <p v-if="selected==='0'">Texto en Español</p> 
+              <p v-else>Texto en Inglés</p>
+            </div>
+            
           </b-list-group-item>
+          
           <b-list-group-item class="listIdioma pr-0" style="width: 260px; margin-left: 13%">
             <p>@2021 Delivery Food</p>
           </b-list-group-item>
@@ -119,6 +124,26 @@
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      selected: '0',
+        options: [
+          // { value: null, text: 'Seleccionar idioma' },
+          { value: '0', text: 'Español' },
+          { value: '1', text: 'Inglés' },
+        ]
+    }
+  },
+  methods: {
+    myFunction() {
+      alert("You have selected some text!");
+    }
+  },
+}
+</script>
 
 <style lang="scss">
 
@@ -158,6 +183,60 @@
   background-color: #333740 !important;
   border: none !important;
 }
+
+//Idioma
+
+// #mySelect select {
+//   background-color: transparent; 
+//   border-radius: 25px;
+//   width: 40%;
+//   color: white;
+//   outline: none;
+// }
+
+// #mySelect option {
+//   background-color: transparent !important;
+//   color: black;
+// }
+
+ul, ol {
+				list-style:none;
+			}
+			
+			.nav > li {
+				float:left;
+			}
+			
+			.nav li button {
+				background-color:#000;
+				color:#fff;
+				text-decoration:none;
+				padding:10px 12px;
+				display:block;
+			}
+			
+			.nav li button:hover {
+				background-color:#434343;
+			}
+			
+			// .nav li ul {
+			// 	display:none;
+			// 	position:absolute;
+			// 	min-width:140px;
+			// }
+			
+			.nav ul:hover > li {
+				display:block;
+			}
+			
+			.nav ul li {
+				position:relative;
+			}
+			
+			// .nav li ul li ul {
+			// 	right:-140px;
+			// 	top:0px;
+			// }
 
 .listIdioma {
   background-color: #2C2F36 !important;

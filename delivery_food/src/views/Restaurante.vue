@@ -2,13 +2,13 @@
     <div id="restaurante-page">
 
         <b-container id="registroRestaurante">
-            <b-row>
-                <b-col md="4" class="mb-5">
-                    <h1>Únete a Delivery Food y ve crecer tu negocio</h1>
-                    <h4>Plataforma rápida y confiable de entrega de comida.</h4>
+            <b-row style="height:100%">
+                <b-col id="textRegRest" md="4" class="mb-5 pt-5 px-5">
+                    <h1 class="">Únete a Delivery Food y ve crecer tu negocio</h1>
+                    <h4 class="ml-0" style="width:60%">Plataforma rápida y confiable de entrega de comida.</h4>
                 </b-col>
-                <b-col id="formulario" md="4" offset-md="4" class="p-3">
-                    <h3>Hazte socio</h3>
+                <b-col id="formRegRest" md="4" offset-md="4" class="p-3">
+                    <h4 class="ml-0">Hazte socio</h4>
                 </b-col>
             </b-row>
         </b-container>
@@ -105,3 +105,30 @@ export default {
     name: 'Restaurante',
 }
 </script>
+
+<style lang="scss">
+
+@import '@/assets/scss/app.scss';
+
+#registroRestaurante {
+  background: url('http://localhost:8000/media/ImagenesSitio/registro-restaurante_M3YoWsZ.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  filter: saturate(150%) contrast(120%);
+  width: 100%;
+  height: 600px;
+}
+    
+#textRegRest {
+    color: white;
+    height: 100%;
+    background: linear-gradient(to right, rgba(0,0,0,0.8), rgba(255,255,255,0));
+}
+    
+#formRegRest {
+    color: white;
+    background-color: rgba(0,0,0,0.5);
+    height: 100%;
+}
+
+</style>
